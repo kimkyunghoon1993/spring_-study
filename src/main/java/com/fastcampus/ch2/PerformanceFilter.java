@@ -8,8 +8,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+
+import jakarta.servlet.annotation.WebFilter;
 
 // 필터를 적용할 요청의 패턴 지정 - 모든 요청에 필터를 적용.
 @WebFilter(urlPatterns="/*")

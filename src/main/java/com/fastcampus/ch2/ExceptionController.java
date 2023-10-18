@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class ExceptionController {
-	@ExceptionHandler({NullPointerException.class, FileNotFoundException.class})
-	public String catcher2(Exception ex, Model m) {
-		m.addAttribute("ex", ex);
-		return "error";
-	}
+    @ExceptionHandler({NullPointerException.class, FileNotFoundException.class})
+    public String catcher2(Exception ex, Model m) {
+        m.addAttribute("ex", ex);
+        return "error";
+    }
 
-	@ExceptionHandler(Exception.class)
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) // 200 -> 500
-	public String catcher(Exception ex, Model m) {
-		System.out.println("catcher() in ExceptionController");
-		System.out.println("m="+m);
-//		m.addAttribute("ex", ex);
+    @ExceptionHandler(Exception.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) // 200 -> 500
+    public String catcher(Exception ex, Model m) {
+        System.out.println("catcher() in ExceptionController");
+        System.out.println("m=" + m);
+        //		m.addAttribute("ex", ex);
 
-		return "error";
-	}
-	
-	@RequestMapping("/ex")
-	public String main(Model m) throws Exception {
-		m.addAttribute("msg", "message from ExceptionController.main()");
-		throw new Exception("예외가 발생 했습니다.");
-	}
+        return "error";
+    }
 
-	@RequestMapping("/ex2")
-	public String main2() throws Exception {
-		throw new NullPointerException("예외가 발생 했습니다");
-	}
+    @RequestMapping("/ex")
+    public String main(Model m) throws Exception {
+        m.addAttribute("msg", "message from ExceptionController.main()");
+        throw new Exception("예외가 발생 했습니다.");
+    }
+
+    @RequestMapping("/ex2")
+    public String main2() throws Exception {
+        throw new NullPointerException("예외가 발생 했습니다");
+    }
 }

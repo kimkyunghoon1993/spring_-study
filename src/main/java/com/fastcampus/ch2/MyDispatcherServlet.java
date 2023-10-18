@@ -3,19 +3,16 @@ package com.fastcampus.ch2;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.annotation.WebServlet;
 import org.springframework.ui.Model;
 import org.springframework.validation.support.BindingAwareModelMap;
 
